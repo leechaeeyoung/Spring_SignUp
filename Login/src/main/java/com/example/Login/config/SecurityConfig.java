@@ -1,5 +1,6 @@
 package com.example.Login.config;
 
+import com.example.Login.service.MemberService;
 import lombok.AllArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -16,7 +17,7 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 @EnableWebSecurity
 @AllArgsConstructor
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
-    private final MemberService memberService;
+    private MemberService memberService;
 
     @Bean
     public PasswordEncoder passwordEncoder() {

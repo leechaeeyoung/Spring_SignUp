@@ -1,5 +1,7 @@
 package com.example.Login.controller;
 
+import com.example.Login.dto.MemberDto;
+import com.example.Login.service.MemberService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -7,7 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 @AllArgsConstructor
 public class MemberController {
-    private MemberService memberService;
+    private final MemberService memberService;
 
     //메인 페이지
     @GetMapping("/")
@@ -53,6 +55,6 @@ public class MemberController {
     //어드민 페이지
     @GetMapping("/admin")
     public String dispAdmin(){
-        return "/admin"; 
+        return "/admin";
     }
 }
